@@ -1,0 +1,28 @@
+<div class="card mb-2" style="width: 18rem; height:430px !important;">
+  <div class="d-flex  justify-content-between">
+    <h5 class="text-dark ml-3">{{movie.name}}</h5>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" (click)=edit()>Edit</button>
+          <button class="dropdown-item" (click)=delete()>Delete</button>
+      </div>
+    </div>
+  </div>
+  <img class="card-img-top imageHeight" [src]="imgSrc||'../../assets/images/uploadImage.png'" alt="Card image cap">
+  <div class="card-body">
+    <textarea rows="3" cols="30" class="card-text descClass">{{movie.description}}</textarea>
+    <div class="favIcon" (click)=favMovie($event)>
+      <a>
+      <i class="fa fa-heart text-white favItemHeart" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="d-flex justify-content-around">
+        <div>{{movie.releaseDate | date:'MMMM d, y'}}</div>
+        <div class="d-flex"><div>rating</div><div class="text-danger ml-2">{{movie.rating}}</div></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container-fluid bg-white">
+  <button class="btn bg-primary ml-4 text-white" (click)=goAddMovie()>Create</button>
+  <div *ngIf="MovieList;else noMovies">
+    <div class="row p-4 bg-white">
+      <div
+          *ngFor="let movie of MovieList"
+          class= "bg-white text-center col-md-3 box-shadow-full"
+          >
+        <app-movie-item [movie]=movie></app-movie-item>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noMovies class="container bg-dark m-auto">
+    <p class="alert alert-danger w-50 font-weight-bolder text-center">
+      Movies list is empty
+    </p>
+  </ng-template>
+</div>

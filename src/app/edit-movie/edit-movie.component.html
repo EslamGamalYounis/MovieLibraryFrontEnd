@@ -1,0 +1,69 @@
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-lg-6 mb-5 mb-lg-0 text-center">
+      <span class="bg-dark-gray d-block">Upload Image</span>
+      <img id="uploadedImage"
+      [src]="imageSrc||'../../assets/images/uploadImage.png'"
+      alt="image" class="d-block upImgClass mw-100 mx-auto"
+      >
+      <input class="" type="file" (change)=OnUpload($event);>
+    </div>
+
+    <div class="col-lg-6">
+      <a href="#">Back To Movie List</a>
+
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >Name</span>
+        </div>
+        <input  type="text" #name [(ngModel)] ="movie.name"
+                class="form-control" aria-label="Default"
+                aria-describedby="inputGroup-sizing-default"
+                placeholder="Add Movie Name">
+      </div>
+
+      <div class="input-group mb-3 mt-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >Description</span>
+        </div>
+        <textarea  type="text" #description [(ngModel)] ="movie.description"
+                class="form-control" aria-label="Default"
+                aria-describedby="inputGroup-sizing-default"
+                placeholder="Add Movie Description"
+                rows="4" cols="50">
+        </textarea>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" >Date</span>
+        </div>
+        <input type="date" #date [(ngModel)] ="movie.releaseDate"
+                class="form-control" aria-label="Default"
+                aria-describedby="inputGroup-sizing-default"
+                placeholder="Add Product Price">
+      </div>
+
+      <div #warningDiv
+            class="alert alert-danger d-none border-2 m-auto"
+            style="margin-bottom: 5px !important; border: 3px solid blue;border-radius: 5px;"
+      >all field are required.</div>
+      <hr>
+      <div class="text-center">
+          <button
+            class="btn btn-success w-25"
+            (click)='onUpdateMovie(name.value,description.value,date.value)'
+            >
+            Save
+          </button>
+          <button
+            class="btn btn-danger w-25 ml-2"
+            (click)='OnDiscard()'
+            >
+            Discard
+          </button>
+      </div>
+
+    </div>
+  </div>
+</div>

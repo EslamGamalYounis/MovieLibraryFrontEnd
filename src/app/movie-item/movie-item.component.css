@@ -1,0 +1,17 @@
+.imageHeight{
+  height: 250px !important;
+}
+
+.favItemHeart{
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  top: 250px;
+}
+
+.descClass{
+  border: 1px solid gray;
+  border-radius: 5px;
+  resize: none;
+}
